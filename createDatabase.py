@@ -371,7 +371,7 @@ def marital_status():
 
 
 def random_date():
-    y = randint(1920, 1999)
+    y = randint(1930, 2010)
     m = randint(1, 12)
     d = randint(1, 30)
     if calendar.isleap(y):

@@ -17,8 +17,8 @@ df.loc[40, "Broker_ID"] = np.nan
 df.loc[22, "Date_Of_Claim"] = None
 df.loc[23, "Date_Of_Loss"] = None
 df.loc[44, "Sum_Insured"] = -5000.01
-df.loc[50, "Date_Of_Loss"] = pd.Timestamp("2018-03-01 00:00:00", tz=None)
-df.loc[200, "Policy_Start"] = pd.Timestamp("2018-03-01 00:00:00", tz=None)
+df.loc[50, "Date_Of_Loss"] = pd.Timestamp("2023-03-01 00:00:00", tz=None)
+df.loc[200, "Policy_Start"] = pd.Timestamp("2023-03-01 00:00:00", tz=None)
 df.loc[500, "Policies_Revenue"] = None
 df.loc[100, "Policies_Revenue"] = None
 df.loc[520, "Policies_Revenue"] = None
@@ -75,7 +75,7 @@ df = df[(df['Date_Of_Claim'] >= df['Date_Of_Loss'])]
 
 print(Color.GREEN + "\n\n\nHandle Claim_ID" + Color.END)
 df['Claim_ID'].dropna(inplace=True )
-#df['Claim_ID'] = df['Claim_ID'].astype(int)
+# df['Claim_ID'] = df['Claim_ID'].astype("int64")
 
 
 print(Color.GREEN + "\n\n\nHandle Postal_Code" + Color.END)

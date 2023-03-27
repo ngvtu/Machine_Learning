@@ -28,8 +28,8 @@ def load_data():
     tmp = tmp.astype(str).replace('', 1).astype(int)
     iris.target = tmp.astype(int).values
     # df = df[['Sum_Insured', 'Policies_Revenue', 'Broker_ID', 'Claim_Amount']]
-    iris.data = np.dstack( (df['Sum_Insured'].astype(np.float), df['Policies_Revenue'].astype(np.float),
-                            df['Broker_ID'].astype(np.int), df['Claim_Amount'].astype(np.float)) )[0]
+    iris.data = np.dstack( (df['Sum_Insured'].astype(np.float64), df['Policies_Revenue'].astype(np.float64),
+                            df['Broker_ID'].astype(np.int64), df['Claim_Amount'].astype(np.float64)) )[0]
 
     return iris
 
@@ -65,7 +65,7 @@ clf.fit(train_data, train_target)
 
 print("Training set: " + str(len(train_target)))
 print("Testing set: " + str(len(test_target)))
-# print(clf.predict(test_data))
+print(clf.predict(test_data))
 pred = clf.predict(test_data)
 
 score = metrics.accuracy_score(test_target, pred)
